@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial;
+}
+body {
+  min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+form,
+.ticket {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 400px;
+  border-radius: 28px;
+  justify-content: space-between;
+  background-color: lightgray;
+  padding: 1.8em;
+  gap: 10px;
+}
+
+.input-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+}
+
+.buttons-wrraper {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  margin-top: auto;
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: none;
+}
+
+input,
+select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  min-width: 200px;
+}
