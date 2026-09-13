@@ -19,29 +19,30 @@
       <div class="input-field">
         <label for="type">Ticket Type</label>
         <select name="" id="type">
-          <option value="">Standard: 100 EGP</option>
-          <option value="">VIP: 180 EGP</option>
+          <option value="Standard">Standard: 100 EGP</option>
+          <option value="VIP">VIP: 180 EGP</option>
         </select>
       </div>
       <div class="input-field">
         <label for="quantity">Quantity</label
         ><select name="" id="quantity">
-          <option value="">1</option>
-          <option value="">2</option>
-          <option value="">3</option>
-          <option value="">4</option>
-          <option value="">5</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
         </select>
       </div>
       <div class="input-field">
         <label for="promo-code">Promo Code</label>
-        <input id="promo-code" type="text" placeholder="Promo Code" />
+        <input re id="promo-code" type="text" placeholder="Promo Code" />
       </div>
       <div class="buttons-wrraper">
-        <button class="submit">Submit</button>
-        <button class="reset">Reset</button>
+        <input type="submit" class="submit-btn" value="Submit" />
+        <input type="reset" class="reset-btn" value="Reset" />
       </div>
     </form>
     <div class="ticket"></div>
+    <script src="script.js"></script>
   </body>
 </html>
