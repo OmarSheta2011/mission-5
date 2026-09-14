@@ -36,7 +36,15 @@ function loadPage() {
     if (age < 13) discount = 0.2;
     else if (promoCode === "ACCIO10") discount = 0.1;
 
-    const priceAfterDiscount = ticketPrice - ticketPrice * discount;
+    const priceAfterDiscount = originalPrice - originalPrice * discount;
+
+    ticketElem.innerHTML = `
+      <p>visitor name: ${name}</p>
+      <p>Ticket Type: ${type}</p>
+      <p>Quantity: ${quantity}</p>
+      <p>original total: <strike>${originalPrice}</strike></p>
+      <p>Applied Discount: ${ `${discount * 100}` + '%'}</p>
+      <p>Final Price: ${priceAfterDiscount}</p>`;
   });
 }
 
