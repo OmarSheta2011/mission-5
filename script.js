@@ -42,9 +42,13 @@ function loadPage() {
       <p>visitor name: ${name}</p>
       <p>Ticket Type: ${type}</p>
       <p>Quantity: ${quantity}</p>
-      <p>original total: <strike>${originalPrice}</strike></p>
-      <p>Applied Discount: ${ `${discount * 100}` + '%'}</p>
+      <p>original total: ${discount !== 0 ? `<strike>${originalPrice}</strike>` : `${originalPrice}`}</p>
+      <p>Applied Discount: ${`${discount * 100}` + "%"}</p>
       <p>Final Price: ${priceAfterDiscount}</p>`;
+  });
+
+  resetBtn.addEventListener("click", () => {
+    ticketElem.innerHTML = "<p>please fill in the form</p>";
   });
 }
 
