@@ -10,12 +10,15 @@ function loadPage() {
   const ticketElem = document.querySelector(".ticket");
 
   // ---------------------------------------------------
+  function checkIfEmpty(str) {
+    return !(checker = str.split("").some((element) => element !== " "));
+  }
   submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
     const name = nameInput.value;
     const age = Number(ageInput.value);
-    if (!name || !age || age < 0) {
+    if (!name || !age || age < 0 || checkIfEmpty(name)) {
       alert("Error: Name or age is invalid");
       return;
     }
