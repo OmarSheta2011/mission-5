@@ -6,11 +6,13 @@
 }
 body {
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 8px;
 }
 
 form,

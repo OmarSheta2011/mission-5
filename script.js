@@ -2,25 +2,26 @@ function loadPage() {
   const submitBtn = document.querySelector(".submit-btn");
   const resetBtn = document.querySelector(".reset-btn");
   // ---------------------------------------------------
-  const nameIput = document.querySelector("#name"); // required
-  const ageIput = document.querySelector("#age"); // required
-  const typeIput = document.querySelector("#type");
-  const quantityIput = document.querySelector("#quantity");
-  const promoCodeIput = document.querySelector("#promo-code");
+  const nameInput = document.querySelector("#name"); // required
+  const ageInput = document.querySelector("#age"); // required
+  const typeInput = document.querySelector("#type");
+  const quantityInput = document.querySelector("#quantity");
+  const promoCodeInput = document.querySelector("#promo-code");
   const ticketElem = document.querySelector(".ticket");
 
   // ---------------------------------------------------
   submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    if (!nameIput.value || !ageIput.value) {
+
+    const name = nameInput.value;
+    const age = Number(ageInput.value);
+    if (!name || !age || age < 0) {
       alert("Error: Name or age is invalid");
       return;
     }
-    const name = nameIput.value;
-    const age = ageIput.value;
-    const type = typeIput.value;
-    const promoCode = promoCodeIput.value;
-    const quantity = Number(quantityIput.value);
+    const type = typeInput.value;
+    const promoCode = promoCodeInput.value;
+    const quantity = Number(quantityInput.value);
 
     let originalPrice;
     switch (type) {
@@ -39,10 +40,10 @@ function loadPage() {
     const priceAfterDiscount = originalPrice - originalPrice * discount;
 
     ticketElem.innerHTML = `
-      <p>visitor name: ${name}</p>
+      <p>Visitor Name: ${name}</p>
       <p>Ticket Type: ${type}</p>
       <p>Quantity: ${quantity}</p>
-      <p>original total: ${discount !== 0 ? `<strike>${originalPrice}</strike>` : `${originalPrice}`}</p>
+      <p>Original Total: ${discount !== 0 ? `<strike>${originalPrice}</strike>` : `${originalPrice}`}</p>
       <p>Applied Discount: ${`${discount * 100}` + "%"}</p>
       <p>Final Price: ${priceAfterDiscount}</p>`;
   });
